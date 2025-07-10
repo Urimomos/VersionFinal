@@ -1,0 +1,17 @@
+{
+  "public/images/hero-background.jpg": {
+    "file": "assets/hero-background-CdUq_it9.jpg",
+    "src": "public/images/hero-background.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-ta_Y-lUU.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DaBYqt0m.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
