@@ -1,0 +1,163 @@
+/* Estas 3 líneas son de Tailwind y DEBEN estar al principio */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === AÑADE TUS ESTILOS PERSONALIZADOS AQUÍ ABAJO === */
+
+/* --- Paleta de Colores y Variables (Fácil de modificar) --- */
+:root {
+    --color-rojo-principal: #A92C37; /* Rojo del botón "Inicia sesión" */
+    --color-texto-oscuro: #1a1a1a;
+    --color-texto-claro: #ffffff;
+    --color-fondo-claro: #ffffff;
+    --color-enlace-gris: #555555;
+}
+
+/* --- Estilos Generales --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ... (pega el resto de los estilos de navbar, hero, features, etc. aquí) ... */
+.navbar {
+    background-color: var(--color-fondo-claro);
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajusta la altura de tu logo */
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-enlace-gris);
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: var(--color-texto-oscuro);
+    border-bottom: 2px solid var(--color-rojo-principal);
+}
+
+/* --- Estilo de Botones --- */
+.btn {
+    text-decoration: none;
+    color: var(--color-texto-claro);
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: transform 0.2s ease;
+    display: inline-block; /* Buena práctica */
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--color-rojo-principal);
+}
+
+/* --- Sección de Héroe --- */
+.hero {
+    /* OJO: La ruta de la imagen ahora se maneja en el CSS */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../public/images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-texto-claro);
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-texto-claro);
+    font-size: 1.1rem;
+    padding: 15px 40px;
+}
+
+/* --- Sección "Repara con los profesionales" --- */
+.features {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.feature-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- Pie de Página --- */
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--color-enlace-gris);
+}
+
+/* --- Diseño Responsivo para Móviles --- 
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;  En un proyecto real, aquí se implementaría un menú de hamburguesa 
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero {
+        height: 60vh;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}*/
