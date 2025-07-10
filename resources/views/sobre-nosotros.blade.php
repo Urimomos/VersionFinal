@@ -15,7 +15,7 @@
                 <div class="text-lg text-gray-700 space-y-4">
                     <h2 class="text-2xl font-semibold text-gray-800">Nuestra Historia</h2>
                     <p>
-                        Fixme nació en 2025 con la misión de ofrecer un servicio de reparación honesto, rápido y profesional. Entendemos lo importante que son tus dispositivos en tu día a día, por eso nuestro equipo de técnicos expertos se dedica a darles una segunda vida.
+                        Fixme nació en 2023 con la misión de ofrecer un servicio de reparación honesto, rápido y profesional. Entendemos lo importante que son tus dispositivos en tu día a día, por eso nuestro equipo de técnicos expertos se dedica a darles una segunda vida.
                     </p>
                     <p>
                         Creemos en la reparación como un acto de libertad y sostenibilidad. Cada dispositivo que arreglamos es un dispositivo menos que contamina nuestro planeta. Nos enorgullece ser tu aliado tecnológico de confianza.

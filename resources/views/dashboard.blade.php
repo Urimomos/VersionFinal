@@ -14,6 +14,14 @@
                 <div class="p-6 text-gray-900">
                     <h3 class="text-2xl font-bold">¡Hola, {{ Auth::user()->name }}!</h3>
                     <p class="mt-2 text-gray-600">Bienvenido a tu panel de control. Aquí podrás ver tus cotizaciones y reparaciones guardadas.</p>
+
+                      <div class="mt-6">
+                        <a href="{{ route('quote.create') }}" class="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-5 rounded-lg transition-colors">
+                        + Realizar Nueva Cotización
+                         </a>
+                    </div>
+
+
                 </div>
             </div>
 
