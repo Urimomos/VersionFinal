@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\V1\QuoteApiController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Quote;
 use App\Http\Controllers\Admin\QuoteController as AdminQuoteController; 
+use App\Http\Controllers\Admin\UserController;
 
 
 Route::get('/', function () {
@@ -19,7 +20,6 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     $quotes = Auth::user()
         ->quotes()
-        ->where('status', 'pending') // <-- AÑADE ESTE FILTRO
         ->with(['deviceModel.brand', 'repairType'])
         ->latest()
         ->get();
@@ -59,6 +59,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/quotes/{quote}/complete', [AdminQuoteController::class, 'complete'])->name('quotes.complete');
 
     Route::delete('/quotes/{quote}', [AdminQuoteController::class, 'destroy'])->name('quotes.destroy');
+
+    Route::resource('users', UserController::class);
 });
 // RUTA PARA LA PÁGINA DE COTIZACIÓN
 Route::get('/cotizacion', [QuoteController::class, 'create'])->name('quote.create');

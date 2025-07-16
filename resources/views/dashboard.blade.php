@@ -45,7 +45,7 @@
                         <th class="px-4 py-3">Reparación</th>
                         <th class="px-4 py-3">Precio Estimado</th>
                         <th class="px-4 py-3">Estado</th>
-                        <th class="px-4 py-3">Fecha</th>
+                        <th class="px-4 py-3">Fecha de cotizacion</th>
                         <th class="px-4 py-3">Acciones</th> 
                     </tr>
                 </thead>
@@ -64,17 +64,27 @@
                             </td>
                             <td class="px-4 py-3 text-sm">{{ $quote->created_at->format('d/m/Y') }}</td>
                             <td class="px-4 py-3 text-sm">
+                               @if ($quote->status === 'pending')
                                 <form action="{{ route('quote.destroy', $quote) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas cancelar esta cotización?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-600 hover:text-red-900 font-semibold">Cancelar</button>
                                 </form>
+                                @else
+                                {{-- Si está completada, muestra el botón "Eliminar" --}}
+                                <form action="{{ route('quote.destroy', $quote) }}" method="POST" onsubmit="return confirm('Esta acción eliminará permanentemente la cotización de tu historial. ¿Estás seguro?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-gray-500 hover:text-gray-800 font-semibold">Eliminar</button>
+                                </form>
+                                @endif
                             </td>
                         </tr>
                     @empty
                         <tr>
                             <td colspan="5" class="px-4 py-6 text-center text-gray-500">
-                                Aún no tienes cotizaciones guardadas. ¡Crea una ahora!
+                                Aún no tienes cotizaciones guardadas.
+                                <a href="{{ route('quote.create') }}" class="text-blue-600 hover:underline font-semibold">¡Crea una ahora!</a>
                             </td>
                         </tr>
                     @endforelse
