@@ -41,15 +41,13 @@ class UserController extends Controller
         return redirect()->route('admin.users.index')->with('success', 'Administrador creado exitosamente.');
     }
 
-    // INICIO DEL NUEVO MÉTODO
-    public function show(User $user)
+     public function show(User $user)
     {
         // Cargamos el usuario junto con sus cotizaciones y las relaciones de cada cotización
         $user->load('quotes.deviceModel.brand', 'quotes.repairType');
 
         return view('admin.users.show', compact('user'));
     }
-    // FIN DEL NUEVO MÉTODO
 
     public function destroy(User $user)
     {
@@ -61,6 +59,4 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('admin.users.index')->with('success', 'Usuario eliminado exitosamente.');
     }
-
-
 }
